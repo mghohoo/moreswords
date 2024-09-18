@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "WWW",
+    "WWW"
+  ],
+  "key": {
+    "W": {
+      "item": "compression:compression_lv8_wooden_sword"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "compression:compression_lv9_wooden_sword"
+  }
+}

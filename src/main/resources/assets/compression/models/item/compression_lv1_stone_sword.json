@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "compression:item/compression_lv1_stone_sword"
+  }
+}

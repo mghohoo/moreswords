@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "moresword",
+  "version": "${version}",
+  "name": "Moresword",
+  "description": "moresword!",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/moresword/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.sam.moresword.client.MoreswordClient"
+    ],
+    "main": [
+      "com.sam.moresword.Moresword"
+    ]
+  },
+  "mixins": [
+    "moresword.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.2",
+    "fabric": "*",
+    "minecraft": "1.20.3"
+  }
+}
