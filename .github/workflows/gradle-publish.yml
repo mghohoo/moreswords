@@ -20,6 +20,10 @@ jobs:
     permissions:
       contents: read
       packages: write
+      deployments: write
+      statuses: write
+      actions: write
+      checks: read
 
     steps:
     - uses: actions/checkout@v4
