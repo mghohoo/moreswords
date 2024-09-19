@@ -49,4 +49,5 @@ jobs:
       with:
         files: ${{ steps.find_jars.outputs.jars }}
         token:  ${{ secrets.CONTENTS_TOKEN }}
+      env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
