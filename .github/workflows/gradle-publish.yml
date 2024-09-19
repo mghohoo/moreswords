@@ -48,3 +48,4 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: ${{ steps.find_jars.outputs.jars }}
+        token:  ${{ secrets.CONTENTS_TOKEN }}
