@@ -8,8 +8,9 @@
 name: Gradle Build and Upload
 
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - 'v*'
   workflow_dispatch:
   
 jobs:
