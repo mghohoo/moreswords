@@ -36,15 +36,15 @@ jobs:
     - name: Build with Gradle
       run: chmod +x ./gradlew; ./gradlew build
 
+    - name: Find JARs
+      id: find_jars
+      run: |
+        jars=$(find ./build/libs -name "*.jar" ! -name "*-sources.jar" | sed ':a;N;$!ba;s/\n/,/g')
+        echo "::set-output name=jars::$jars"
+
     - name: Upload Release Assets
+      uses: softprops/action-gh-release@v1
+      with:
+        files: ${{ steps.find_jars.outputs.jars }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        for jar in $(find ./build/libs -name "*.jar" ! -name "*-sources.jar"); do
-          echo "Uploading $jar"
-          curl \
-            -H "Authorization: token $GITHUB_TOKEN" \
-            -H "Content-Type: $(file -b --mime-type $jar)" \
-            --data-binary @$jar \
-            "${{ github.event.release.upload_url }}?name=$(basename $jar)"
-        done
