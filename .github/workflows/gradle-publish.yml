@@ -43,7 +43,7 @@ jobs:
         echo "::set-output name=jars::$jars"
 
     - name: Upload Release Assets
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       with:
         files: ${{ steps.find_jars.outputs.jars }}
       env:
