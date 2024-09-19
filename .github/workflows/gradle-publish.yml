@@ -35,11 +35,15 @@ jobs:
     - name: Build with Gradle
       run: chmod +x ./gradlew; ./gradlew build
 
-
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: moresword-artifact
-        path: |
-          build/libs/*.jar
-          !build/libs/*-sources.jar
+    - name: Upload Release Assets
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        for jar in $(find ./build/libs -name "*.jar" ! -name "*-sources.jar"); do
+          echo "Uploading $jar"
+          curl \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Content-Type: $(file -b --mime-type $jar)" \
+            --data-binary @$jar \
+            "${{ github.event.release.upload_url }}?name=$(basename $jar)"
+        done
