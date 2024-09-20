@@ -37,6 +37,7 @@ public class Moresword implements ModInitializer {
     public static final ToolItem COMPRESSION_LV1_IRON_SWORD = new SwordItem(CompressionLv1IronSword.INSTANCE,250,250,new Item.Settings());
     public static final ToolItem COMPRESSION_LV2_IRON_SWORD = new SwordItem(CompressionLv2IronSword.INSTANCE,300,300,new Item.Settings());
     public static final ToolItem COMPRESSION_LV3_IRON_SWORD = new SwordItem(CompressionLv3IronSword.INSTANCE,350,350,new Item.Settings());
+    public static final ToolItem COMPRESSION_LV4_IRON_SWORD = new SwordItem(CompressionLv4IronSword.INSTANCE,370,370,new Item.Settings());
 
     public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of("compression", "item_group"));
     public static final ItemGroup CUSTOM_ITEM_GROUP = FabricItemGroup.builder()
@@ -71,6 +72,7 @@ public class Moresword implements ModInitializer {
         Registry.register(Registries.ITEM,new Identifier("compression", "compression_lv1_iron_sword"),COMPRESSION_LV1_IRON_SWORD);
         Registry.register(Registries.ITEM,new Identifier("compression", "compression_lv2_iron_sword"),COMPRESSION_LV2_IRON_SWORD);
         Registry.register(Registries.ITEM,new Identifier("compression","compression_lv3_iron_sword"),COMPRESSION_LV3_IRON_SWORD);
+        Registry.register(Registries.ITEM,new Identifier("compression","compression_lv4_iron_sword"),COMPRESSION_LV4_IRON_SWORD);
 
         Registry.register(Registries.ITEM_GROUP,CUSTOM_ITEM_GROUP_KEY,CUSTOM_ITEM_GROUP);
 
@@ -98,6 +100,7 @@ public class Moresword implements ModInitializer {
             itemGroup.add(COMPRESSION_LV1_IRON_SWORD);
             itemGroup.add(COMPRESSION_LV2_IRON_SWORD);
             itemGroup.add(COMPRESSION_LV3_IRON_SWORD);
+            itemGroup.add(COMPRESSION_LV4_IRON_SWORD);
         });
     }
 }
