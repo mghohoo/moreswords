@@ -103,7 +103,6 @@ public class Moresword implements ModInitializer {
             itemGroup.add(COMPRESSION_LV2_IRON_SWORD);
             itemGroup.add(COMPRESSION_LV3_IRON_SWORD);
             itemGroup.add(COMPRESSION_LV4_IRON_SWORD);
-            itemGroup.add(COMPRESSION_LV5_IRON_SWORD);
-        });
+            itemGroup.add(COMPRESSION_LV5_IRON_SWORD);});
     }
 }
