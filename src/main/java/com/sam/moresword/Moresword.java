@@ -11,6 +11,8 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
+import java.awt.*;
+
 public class Moresword implements ModInitializer {
 
     public static final ToolItem COMPRESSION_LV1_WOODEN_SWORD = new SwordItem(CompressionLv1WoodenSword.INSTANCE,4,2,new Item.Settings());
@@ -39,6 +41,7 @@ public class Moresword implements ModInitializer {
     public static final ToolItem COMPRESSION_LV3_IRON_SWORD = new SwordItem(CompressionLv3IronSword.INSTANCE,350,350,new Item.Settings());
     public static final ToolItem COMPRESSION_LV4_IRON_SWORD = new SwordItem(CompressionLv4IronSword.INSTANCE,370,370,new Item.Settings());
     public static final ToolItem COMPRESSION_LV5_IRON_SWORD = new SwordItem(CompressionLv5IronSword.INSTANCE,450,450,new Item.Settings());
+    public static final ToolItem COMPRESSION_LV6_IRON_SWORD = new SwordItem(CompressionLv6IronSword.INSTANCE,500,500,new Item.Settings());
 
     public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of("compression", "item_group"));
     public static final ItemGroup CUSTOM_ITEM_GROUP = FabricItemGroup.builder()
@@ -75,6 +78,7 @@ public class Moresword implements ModInitializer {
         Registry.register(Registries.ITEM,new Identifier("compression","compression_lv3_iron_sword"),COMPRESSION_LV3_IRON_SWORD);
         Registry.register(Registries.ITEM,new Identifier("compression","compression_lv4_iron_sword"),COMPRESSION_LV4_IRON_SWORD);
         Registry.register(Registries.ITEM,new Identifier("compression","compression_lv5_iron_sword"),COMPRESSION_LV5_IRON_SWORD);
+        Registry.register(Registries.ITEM,new Identifier("compression","compression_lv6_iron_sword"),COMPRESSION_LV6_IRON_SWORD);
 
         Registry.register(Registries.ITEM_GROUP,CUSTOM_ITEM_GROUP_KEY,CUSTOM_ITEM_GROUP);
 
@@ -103,6 +107,8 @@ public class Moresword implements ModInitializer {
             itemGroup.add(COMPRESSION_LV2_IRON_SWORD);
             itemGroup.add(COMPRESSION_LV3_IRON_SWORD);
             itemGroup.add(COMPRESSION_LV4_IRON_SWORD);
-            itemGroup.add(COMPRESSION_LV5_IRON_SWORD);});
+            itemGroup.add(COMPRESSION_LV5_IRON_SWORD);
+            itemGroup.add(COMPRESSION_LV6_IRON_SWORD);
+        });
     }
 }
