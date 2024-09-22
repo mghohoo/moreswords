@@ -7,11 +7,11 @@
   ],
   "key": {
     "W": {
-      "item": "compression:compression_lv6_iron_sword"
+      "item": "compression:compression_lv5_iron_sword"
     }
   },
   "result": {
     "count": 1,
-    "item": "compression:compression_lv7_iron_sword"
+    "item": "compression:compression_lv6_iron_sword"
   }
 }
